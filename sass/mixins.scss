@@ -1,0 +1,30 @@
+@mixin container($padding-size: 30px) {
+  padding-right: $padding-size;
+  padding-left: $padding-size;
+  max-width: 1150px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+
+  @media (min-width: $tablet-width) {
+    padding-right: $padding-size + 20;
+    padding-left: $padding-size + 20;
+  }
+}
+
+@mixin link($color: $black, $fill: $color-turquoise) {
+  transition: color 0.3s, fill 0.3s, opacity 0.3s;
+
+  &[href]:hover,
+  &[href]:focus {
+    transition: color 0.1s, fill 0.1s, opacity 0.1s;
+    fill: $fill;
+    color: rgba($color, 0.6);
+    outline: none;
+  }
+
+  &[href]:active {
+    fill: $fill;
+    opacity: 0.3;
+  }
+}
